@@ -1,12 +1,16 @@
 $(document).ready( function () {
 
 var counter = 0;
-    $('button').on('click', function () {
+    $('.firstButton').on('click', function () {
         counter ++;
-        $('body').append('<div class ="firstDiv">' +
+        $('#colorDivContainer').append('<div class ="firstDiv">' +
         '<p>' + counter + '</p>' +
         '<button>Swap</button>' +
-        '<button>Delete</button>' +
+        '<button id ="delete">Delete</button>' +
         '</div>');
     });
+
+    $('#colorDivContainer').on('click', '#delete', function () {
+        $(this).parent().remove();
+    })
 });
